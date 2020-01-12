@@ -13,7 +13,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<p class="tc f7 fw1 white">&copy; Matt Ondo</p>
+		<p class="tc f7 fw1 white">&copy; Matt Ondo | <a href="/privacy-policy">Privacy</a></p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

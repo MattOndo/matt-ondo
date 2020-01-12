@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<div class="flex flex-column flex-row-ns ph4">
-		<main id="main" class="site-main w-100">
+	<div class="w-100 mw9 center flex flex-column flex-row-ns ph4">
+		<main id="main" class="site-main w-100 w-70-ns w-80-l">
 
 		<?php if (have_posts()): ?>
 

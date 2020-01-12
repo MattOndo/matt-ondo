@@ -20,19 +20,46 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-/* Global */
+/* 
+ * Global
+ *
+ */
+a,
+a:visited {
+	color: #fff;
+}
+
 body > img.coconuttmonkey {
 	position: absolute;
-	width: 50vw;
+	width: 90vw;
 	left: -5rem;
-	top: -3rem;
+	top: 0rem;
 	opacity: 0.25;
 	z-index: -999;
 }
 
-/* Fixes */
+@media screen and (min-width: 30em) {
+	body > img.coconuttmonkey {
+		width: 50vw;
+		left: -5rem;
+		top: -3rem;
+	}
+}
+
+/* 
+ * Fixes
+ *
+ */
 img {
 	vertical-align: middle;
+}
+
+/* 
+ * Forms 
+ *
+ */
+div.wpforms-container-full .wpforms-form label.wpforms-error {
+	color: #f00;
 }
 div.wpforms-container-full .wpforms-form input.wpforms-field-medium,
 div.wpforms-container-full .wpforms-form select.wpforms-field-medium,
@@ -42,7 +69,10 @@ div.wpforms-container-full
 	max-width: 100%;
 }
 
-/* Top Bar */
+/* 
+ * Top Bar
+ *
+ */
 #masthead {
 	height: 80px;
 }
@@ -82,7 +112,7 @@ div.wpforms-container-full
 	transition: all 300ms ease-in-out;
 }
 
-#primary-menu > .menu-item > a.current-menu-item,
+#primary-menu > .menu-item.current-menu-item > a:after,
 #primary-menu > .menu-item > a:hover:after {
 	width: 100%;
 }
@@ -101,7 +131,7 @@ body.isScrolled #masthead #primary-menu > .menu-item > a {
 }
 
 body.isScrolled #masthead {
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(51, 51, 51, 0.9);
 }
 
 @media screen and (min-width: 30em) {
@@ -113,9 +143,52 @@ body.isScrolled #masthead {
 	}
 }
 
-/* Sidebar */
+/* 
+ * Sidebar
+ *
+ */
 #secondary ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+/* 
+ * Blog Archive
+ *
+ */
+.entry-title,
+.entry-title a {
+	color: #fff;
+}
+
+.entry-meta a {
+	color: #fff;
+}
+
+/*
+ * Search
+ *
+ */
+input.search-field,
+input.search-submit {
+	-ms-progress-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: 0;
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 0;
+	width: 100%;
+	height: 34px;
+	padding: 0 5px;
+}
+
+input.search-submit {
+	margin-top: 1px;
+}
+
+input.search-submit:hover {
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.5);
 }

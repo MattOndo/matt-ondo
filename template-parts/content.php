@@ -6,54 +6,62 @@
  *
  * @package Matt_Ondo
  */
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class(
+	"bg-black-40 mr4-ns pa4"
+); ?>>
+	<header class="entry-header relative">
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+  if (is_singular()):
+  	the_title('<h1 class="entry-title white">', '</h1>');
+  else:
+  	the_title(
+  		'<h2 class="entry-title mt0"><a href="' .
+  			esc_url(get_permalink()) .
+  			'" rel="bookmark" class="white no-underline">',
+  		'</a></h2>'
+  	);
+  endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				matt_ondo_posted_on();
-				matt_ondo_posted_by();
-				?>
+  if ('post' === get_post_type()): ?>
+			<div class="entry-meta absolute-l top-0 right-0">
+				<?php matt_ondo_posted_on(); ?>
 			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php endif;
+  ?>
 	</header><!-- .entry-header -->
 
-	<?php matt_ondo_post_thumbnail(); ?>
+	<?php
+//matt_ondo_post_thumbnail();
+?>
 
 	<div class="entry-content">
 		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'matt-ondo' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+  the_content(
+  	sprintf(
+  		wp_kses(
+  			/* translators: %s: Name of current post. Only visible to screen readers */
+  			__(
+  				'Continue reading<span class="screen-reader-text"> "%s"</span>',
+  				'matt-ondo'
+  			),
+  			array(
+  				'span' => array(
+  					'class' => array()
+  				)
+  			)
+  		),
+  		get_the_title()
+  	)
+  );
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'matt-ondo' ),
-			'after'  => '</div>',
-		) );
-		?>
+  wp_link_pages(array(
+  	'before' => '<div class="page-links">' . esc_html__('Pages:', 'matt-ondo'),
+  	'after' => '</div>'
+  ));
+  ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php matt_ondo_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+
 </article><!-- #post-<?php the_ID(); ?> -->

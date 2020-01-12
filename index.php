@@ -14,16 +14,16 @@
 
 get_header(); ?>
 
-	<div class="flex flex-column flex-row-ns ph4">
-		<div id="primary" class="content-area w-100">
+	<div class="w-100 mw9 center flex flex-column flex-row-ns ph4">
+		<div id="primary" class="content-area w-100 w-70-ns w-80-l">
 			<main id="main" class="site-main">
 	
 			<?php if (have_posts()):
    	if (is_home() && !is_front_page()): ?>
-					<header>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-					</header>
-					<?php endif;
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+			<?php endif;
 
    	/* Start the Loop */
    	while (have_posts()):
@@ -42,8 +42,8 @@ get_header(); ?>
    	get_template_part('template-parts/content', 'none');
    endif; ?>
 	
-			</main><!-- #main -->
-		</div><!-- #primary -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 	<div class="w-100 w-30-ns w-20-l">
 	<?php get_sidebar(); ?>

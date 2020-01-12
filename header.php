@@ -31,7 +31,7 @@ $fields = get_fields(); ?>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMW4NLP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<img src="http://mattondoio.local/wp-content/uploads/2020/01/logo.svg" class="coconuttmonkey">
+<img src="https://mattondo.io/wp-content/uploads/2020/01/logo.svg" class="coconuttmonkey">
 <div id="page" class="site white">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e(
  	'Skip to content',
